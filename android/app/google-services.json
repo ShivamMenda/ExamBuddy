@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "994777197952",
+    "project_id": "exambuddy-64399",
+    "storage_bucket": "exambuddy-64399.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994777197952:android:13fe839ee1b323cd4a6565",
+        "android_client_info": {
+          "package_name": "com.example.exam_buddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994777197952-ekdo03ttrtfn1g2ntrrjb1tg89ma92i8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWearaCF52lcVHF4POOiBDxncfhsZPMYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994777197952-ekdo03ttrtfn1g2ntrrjb1tg89ma92i8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
