@@ -1,6 +1,13 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:exam_buddy/views/screens/home_screen.dart';
+import 'package:exam_buddy/views/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
 import 'firebase_options.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,12 +21,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text("Test"),
+    return Sizer(
+      builder: (context, orientation, deviceType) => GetMaterialApp(
+        theme: ThemeData(
+          textTheme: GoogleFonts.interTextTheme(),
+          scaffoldBackgroundColor: Color(0xFF1A1A1A),
+          appBarTheme: AppBarTheme(color: Colors.transparent, elevation: 0),
+          buttonTheme: ButtonThemeData(
+            buttonColor: Color(0xFF2A90FF),
+          ),
         ),
+        home: OnBoardingPage(),
       ),
     );
   }
