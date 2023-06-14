@@ -1,21 +1,28 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:exam_buddy/helper/helper_function.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
-class AddTaskAlertDialog extends StatefulWidget {
-  AddTaskAlertDialog({Key? key}) : super(key: key);
+class UpdateTaskAlertDialog extends StatefulWidget {
+  final String taskId, taskName, taskDesc;
+
+  const UpdateTaskAlertDialog(
+      {Key? Key,
+      required this.taskId,
+      required this.taskName,
+      required this.taskDesc})
+      : super(key: Key);
 
   @override
-  State<AddTaskAlertDialog> createState() => _AddTaskAlertDialogState();
+  State<UpdateTaskAlertDialog> createState() => _UpdateTaskAlertDialogState();
 }
 
-class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
+class _UpdateTaskAlertDialogState extends State<UpdateTaskAlertDialog> {
   final TextEditingController taskNameController = TextEditingController();
   final TextEditingController taskDescController = TextEditingController();
+
   String email = "";
-  bool isSuccess = false;
   @override
   void initState() {
     getEmail();
@@ -24,18 +31,21 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
 
   @override
   Widget build(BuildContext context) {
+    taskNameController.text = widget.taskName;
+    taskDescController.text = widget.taskDesc;
+
     var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return AlertDialog(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       scrollable: true,
       title: const Text(
-        'New Task',
+        'Update Task',
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: 16, color: Colors.white),
       ),
       content: SizedBox(
-        height: height * 0.45,
+        height: height * 0.35,
         width: width,
         child: Form(
           child: Column(
@@ -53,7 +63,7 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
                   style: const TextStyle(fontSize: 14),
                   decoration: textInputDecoration(context, "Description",
                       CupertinoIcons.bubble_left_bubble_right)),
-              const SizedBox(height: 7),
+              const SizedBox(height: 15),
             ],
           ),
         ),
@@ -72,12 +82,13 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
           style: ElevatedButton.styleFrom(
             primary: Colors.green,
           ),
-          onPressed: () async {
+          onPressed: () {
             final taskName = taskNameController.text;
             final taskDesc = taskDescController.text;
-            await _addTasks(taskName: taskName, taskDesc: taskDesc);
+            _updateTasks(taskName, taskDesc);
+            Navigator.of(context, rootNavigator: true).pop();
           },
-          child: const Text('Save'),
+          child: const Text('Update'),
         ),
       ],
     );
@@ -116,38 +127,16 @@ class _AddTaskAlertDialogState extends State<AddTaskAlertDialog> {
     });
   }
 
-  Future _addTasks({required String taskName, required String taskDesc}) async {
-    DocumentReference docRef = await FirebaseFirestore.instance
-        .collection('AllTasks')
+  Future _updateTasks(String taskName, String taskDesc) async {
+    var collection = FirebaseFirestore.instance.collection('AllTasks');
+    collection
         .doc(email)
-        .collection("tasks")
-        .add(
-      {
-        'taskName': taskName,
-        'taskDesc': taskDesc,
-      },
-    ).then((value) {
-      Get.snackbar("Success", "Task added", backgroundColor: Colors.green);
-      return value;
-    }).catchError((error) {
-      Get.snackbar("Error", error.toString(), backgroundColor: Colors.red);
-      return error;
-    });
-
-    String taskId = docRef.id;
-    await FirebaseFirestore.instance
-        .collection('AllTasks')
-        .doc(email)
-        .collection("tasks")
-        .doc(docRef.id)
-        .update(
-      {'id': taskId},
-    );
-    _clearAll();
-  }
-
-  void _clearAll() {
-    taskNameController.text = '';
-    taskDescController.text = '';
+        .collection('tasks')
+        .doc(widget.taskId)
+        .update({'taskName': taskName, 'taskDesc': taskDesc})
+        .then((_) => Get.snackbar("Success", "Task updated",
+            backgroundColor: Colors.green))
+        .catchError((error) => Get.snackbar("Error", error.toString(),
+            backgroundColor: Colors.red));
   }
 }
