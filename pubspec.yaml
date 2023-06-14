@@ -40,6 +40,7 @@ dependencies:
   introduction_screen: ^3.1.8
   sizer: ^2.0.15
   get: ^4.6.5
+  sidebarx: ^0.16.0
 
 dev_dependencies:
   flutter_test:
