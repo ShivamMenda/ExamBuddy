@@ -3,15 +3,15 @@ import 'package:exam_buddy/views/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class ToDoScreen extends StatelessWidget {
+  const ToDoScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Home",
+          "To-Do-List",
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
         actions: [

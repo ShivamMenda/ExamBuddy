@@ -24,7 +24,9 @@ class MyApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) => GetMaterialApp(
         theme: ThemeData(
-          textTheme: GoogleFonts.interTextTheme(),
+          iconTheme: IconThemeData(color: Colors.white),
+          textTheme: GoogleFonts.interTextTheme()
+              .apply(bodyColor: Colors.white, displayColor: Colors.white),
           scaffoldBackgroundColor: Color(0xFF1A1A1A),
           appBarTheme: AppBarTheme(color: Colors.transparent, elevation: 0),
           buttonTheme: ButtonThemeData(
