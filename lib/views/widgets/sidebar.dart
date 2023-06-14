@@ -2,6 +2,7 @@ import 'package:exam_buddy/helper/helper_function.dart';
 import 'package:exam_buddy/services/auth_service.dart';
 import 'package:exam_buddy/views/screens/auth/login_screen.dart';
 import 'package:exam_buddy/views/screens/group_chat_screen.dart';
+import 'package:exam_buddy/views/screens/home_screen.dart';
 import 'package:exam_buddy/views/screens/onboarding_screen.dart';
 import 'package:exam_buddy/views/screens/profile_screen.dart';
 import 'package:exam_buddy/views/screens/subject_screen.dart';
@@ -72,7 +73,7 @@ class _SideBarState extends State<SideBar> {
               color: Colors.white,
             ),
             title: Text('Home'),
-            onTap: () => null,
+            onTap: () => HomeScreen(),
           ),
           ListTile(
             leading: Icon(
