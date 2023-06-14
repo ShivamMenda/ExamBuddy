@@ -41,6 +41,7 @@ dependencies:
   sizer: ^2.0.15
   get: ^4.6.5
   sidebarx: ^0.16.0
+  videosdk: ^1.0.12
 
 dev_dependencies:
   flutter_test:

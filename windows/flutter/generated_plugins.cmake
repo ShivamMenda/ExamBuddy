@@ -3,6 +3,8 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  flutter_webrtc
+  videosdk
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
