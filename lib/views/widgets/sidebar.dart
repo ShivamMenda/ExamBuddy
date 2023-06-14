@@ -73,7 +73,7 @@ class _SideBarState extends State<SideBar> {
               color: Colors.white,
             ),
             title: Text('Home'),
-            onTap: () => HomeScreen(),
+            onTap: () => Get.to(() => HomeScreen()),
           ),
           ListTile(
             leading: Icon(
