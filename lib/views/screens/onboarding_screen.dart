@@ -1,3 +1,4 @@
+import 'package:exam_buddy/views/screens/auth/login_screen.dart';
 import 'package:exam_buddy/views/screens/home_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -74,7 +75,7 @@ class OnBoardingPageState extends State<OnBoardingPage> {
           ),
         ),
       ],
-      onDone: () => Get.to(() => HomeScreen()),
+      onDone: () => Get.to(() => LoginPage()),
       //onSkip: () => _onIntroEnd(context), // You can override onSkip callback
       showSkipButton: true,
       skipOrBackFlex: 0,

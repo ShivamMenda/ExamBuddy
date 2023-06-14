@@ -42,6 +42,9 @@ dependencies:
   get: ^4.6.5
   sidebarx: ^0.16.0
   videosdk: ^1.0.12
+  firebase_auth: ^4.6.3
+  cloud_firestore: ^4.8.1
+  shared_preferences: ^2.1.2
 
 dev_dependencies:
   flutter_test:
