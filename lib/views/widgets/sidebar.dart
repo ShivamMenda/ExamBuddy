@@ -1,3 +1,6 @@
+import 'package:exam_buddy/helper/helper_function.dart';
+import 'package:exam_buddy/services/auth_service.dart';
+import 'package:exam_buddy/views/screens/auth/login_screen.dart';
 import 'package:exam_buddy/views/screens/group_chat_screen.dart';
 import 'package:exam_buddy/views/screens/onboarding_screen.dart';
 import 'package:exam_buddy/views/screens/profile_screen.dart';
@@ -7,7 +10,34 @@ import 'package:exam_buddy/views/screens/video_call_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SideBar extends StatelessWidget {
+class SideBar extends StatefulWidget {
+  @override
+  State<SideBar> createState() => _SideBarState();
+}
+
+class _SideBarState extends State<SideBar> {
+  String email = "";
+  String name = "";
+  AuthService authService = AuthService();
+  @override
+  void initState() {
+    getUserData();
+    super.initState();
+  }
+
+  getUserData() async {
+    await HelperFunctions.getUserEmailFromSF().then((value) {
+      setState(() {
+        email = value!;
+      });
+    });
+    await HelperFunctions.getUserNameFromSF().then((value) {
+      setState(() {
+        name = value!;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -17,15 +47,15 @@ class SideBar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text('User'),
-            accountEmail: Text('example@gmail.com'),
+            accountName: Text(name),
+            accountEmail: Text(email),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
-                child: Image.network(
-                  'https://oflutter.com/wp-content/uploads/2021/02/girl-profile.png',
+                child: Image.asset(
+                  "assets/user.jpg",
                   fit: BoxFit.cover,
-                  width: 90,
                   height: 90,
+                  width: 90,
                 ),
               ),
             ),
@@ -33,8 +63,7 @@ class SideBar extends StatelessWidget {
               color: Colors.blue,
               image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: NetworkImage(
-                      'https://oflutter.com/wp-content/uploads/2021/02/profile-bg3.jpg')),
+                  image: AssetImage("assets/profile-bg3.jpg")),
             ),
           ),
           ListTile(
@@ -92,7 +121,10 @@ class SideBar extends StatelessWidget {
               Icons.exit_to_app,
               color: Colors.white,
             ),
-            onTap: () => Get.to(() => OnBoardingPage()),
+            onTap: () {
+              authService.signOut();
+              Get.to(() => LoginPage());
+            },
           ),
         ],
       ),

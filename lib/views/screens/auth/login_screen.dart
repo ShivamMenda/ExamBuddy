@@ -1,9 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:exam_buddy/helper/helper_function.dart';
+import 'package:exam_buddy/services/database_service.dart';
 import 'package:exam_buddy/views/screens/auth/register_screen.dart';
+import 'package:exam_buddy/views/screens/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:exam_buddy/services/auth_service.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -16,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
   String email = "";
   String password = "";
   bool _isLoading = false;
-  // AuthService authService = AuthService();
+  AuthService authService = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                                   TextStyle(color: Colors.white, fontSize: 16),
                             ),
                             onPressed: () {
-                              // login();
+                              login();
                             },
                           ),
                         ),
@@ -180,4 +185,33 @@ class _LoginPageState extends State<LoginPage> {
             ),
     );
   }
+  login() async {
+    if (formKey.currentState!.validate()) {
+      setState(() {
+        _isLoading = true;
+      });
+      await authService
+          .loginWithUserNameandPassword(email, password)
+          .then((value) async {
+        if (value == true) {
+          QuerySnapshot snapshot =
+              await DatabaseService(uid: FirebaseAuth.instance.currentUser!.uid)
+                  .gettingUserData(email);
+          // saving the values to our shared preferences
+          await HelperFunctions.saveUserLoggedInStatus(true);
+          await HelperFunctions.saveUserEmailSF(email);
+          await HelperFunctions.saveUserNameSF(snapshot.docs[0]['fullName']);
+           Get.snackbar("Success", "Login Successful",backgroundColor: Colors.green);
+          Get.to(() => HomeScreen());
+        } else {
+          Get.snackbar("Error", value,backgroundColor: Colors.red);
+          setState(() {
+            _isLoading = false;
+          });
+        }
+      });
+    }
+  }
 }
+
+

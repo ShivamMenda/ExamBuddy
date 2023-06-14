@@ -1,4 +1,5 @@
 import 'package:exam_buddy/helper/helper_function.dart';
+import 'package:exam_buddy/services/auth_service.dart';
 import 'package:exam_buddy/views/screens/auth/login_screen.dart';
 import 'package:exam_buddy/views/screens/home_screen.dart';
 import 'package:flutter/gestures.dart';
@@ -19,7 +20,7 @@ class _RegisterPageState extends State<RegisterPage> {
   String password = "";
   String fullName = "";
   String college = "";
-  // AuthService authService = AuthService();
+  AuthService authService = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -214,7 +215,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   TextStyle(color: Colors.white, fontSize: 16),
                             ),
                             onPressed: () {
-                              // register();
+                              register();
                             },
                           ),
                         ),
@@ -269,28 +270,28 @@ class _RegisterPageState extends State<RegisterPage> {
         ));
   }
 
-//   register() async {
-//     if (formKey.currentState!.validate()) {
-//       setState(() {
-//         _isLoading = true;
-//       });
-//       await authService
-//           .registerUserWithEmailandPassword(fullName, email, password)
-//           .then((value) async {
-//         if (value == true) {
-//           // saving the shared preference state
-//           await HelperFunctions.saveUserLoggedInStatus(true);
-//           await HelperFunctions.saveUserEmailSF(email);
-//           await HelperFunctions.saveUserNameSF(fullName);
-//           Get.to(() => HomeScreen());
-//         } else {
-//           Get.snackbar("Error", value);
-//           setState(() {
-//             _isLoading = false;
-//           });
-//         }
-//       });
-//     }
-//   }
-// }
+  register() async {
+    if (formKey.currentState!.validate()) {
+      setState(() {
+        _isLoading = true;
+      });
+      await authService
+          .registerUserWithEmailandPassword(fullName, email, password, college)
+          .then((value) async {
+        if (value == true) {
+          // saving the shared preference state
+          await HelperFunctions.saveUserLoggedInStatus(true);
+          await HelperFunctions.saveUserEmailSF(email);
+          await HelperFunctions.saveUserNameSF(fullName);
+          Get.snackbar("Success", "Registration Successful",backgroundColor: Colors.green);
+          Get.to(() => HomeScreen());
+        } else {
+          Get.snackbar("Error", value,backgroundColor: Colors.red);
+          setState(() {
+            _isLoading = false;
+          });
+        }
+      });
+    }
+  }
 }
