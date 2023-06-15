@@ -1,11 +1,10 @@
 import 'package:exam_buddy/views/screens/auth/login_screen.dart';
-import 'package:exam_buddy/views/screens/home_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:get/get.dart';
-import 'package:sizer/sizer.dart';
+
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({Key? key}) : super(key: key);

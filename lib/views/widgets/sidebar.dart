@@ -1,9 +1,9 @@
 import 'package:exam_buddy/helper/helper_function.dart';
 import 'package:exam_buddy/services/auth_service.dart';
 import 'package:exam_buddy/views/screens/auth/login_screen.dart';
-import 'package:exam_buddy/views/screens/group_chat_screen.dart';
+import 'package:exam_buddy/views/screens/group_chat/group_chat_screen.dart';
 import 'package:exam_buddy/views/screens/home_screen.dart';
-import 'package:exam_buddy/views/screens/onboarding_screen.dart';
+
 import 'package:exam_buddy/views/screens/profile_screen.dart';
 import 'package:exam_buddy/views/screens/subject_screen.dart';
 import 'package:exam_buddy/views/screens/todo_screen.dart';
@@ -80,8 +80,8 @@ class _SideBarState extends State<SideBar> {
               Icons.book,
               color: Colors.white,
             ),
-            title: Text('Subjects'),
-            onTap: () => Get.to(() => SubjectScreen()),
+            title: Text('Resources'),
+            onTap: () => Get.to(() => ResourceScreen()),
           ),
           ListTile(
             leading: Icon(
@@ -97,7 +97,7 @@ class _SideBarState extends State<SideBar> {
               color: Colors.white,
             ),
             title: Text('Groups'),
-            onTap: () => Get.to(() => GroupChatScreen()),
+            onTap: () => Get.to(() => GroupChatHomePage()),
           ),
           ListTile(
             leading: Icon(

@@ -6,7 +6,6 @@ import 'package:exam_buddy/views/widgets/delete_task_dialog.dart';
 import 'package:exam_buddy/views/widgets/sidebar.dart';
 import 'package:exam_buddy/views/widgets/update_task_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
 class ToDoScreen extends StatefulWidget {
@@ -92,11 +91,9 @@ class _TasksState extends State<Tasks> {
             .snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
-            return Center(
-              child: Text(
-                'No tasks to display',
-                style: TextStyle(color: Colors.white, fontSize: 15),
-              ),
+            return Text(
+              "no data",
+              style: TextStyle(backgroundColor: Colors.white),
             );
           } else {
             return ListView(
@@ -195,5 +192,31 @@ class _TasksState extends State<Tasks> {
         email = value!;
       });
     });
+  }
+
+  noTaskWidget() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          GestureDetector(
+            child: Icon(
+              Icons.add_circle,
+              color: Colors.grey[700],
+              size: 75,
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            "You've not added any tasks, tap on the add icon to get started",
+            textAlign: TextAlign.center,
+          )
+        ],
+      ),
+    );
   }
 }
