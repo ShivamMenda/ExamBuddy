@@ -5,7 +5,7 @@ import 'package:exam_buddy/views/screens/group_chat/group_chat_screen.dart';
 import 'package:exam_buddy/views/screens/home_screen.dart';
 
 import 'package:exam_buddy/views/screens/profile_screen.dart';
-import 'package:exam_buddy/views/screens/subject_screen.dart';
+import 'package:exam_buddy/views/screens/resource_screen.dart';
 import 'package:exam_buddy/views/screens/todo_screen.dart';
 import 'package:exam_buddy/views/screens/video_call_screen.dart';
 import 'package:flutter/material.dart';
