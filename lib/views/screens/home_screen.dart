@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 }),
             SizedBox(
-              height: 5.h,
+              height: 3.5.h,
             ),
             Center(
               child: Text(
@@ -116,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(
-              height: 1.h,
+              height: 2.5.h,
             ),
             StreamBuilder<QuerySnapshot>(
               stream: FirebaseFirestore.instance
