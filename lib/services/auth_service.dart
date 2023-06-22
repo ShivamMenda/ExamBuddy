@@ -1,7 +1,6 @@
 import 'package:exam_buddy/helper/helper_function.dart';
 import 'package:exam_buddy/services/database_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:get/get.dart';
 
 class AuthService {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
