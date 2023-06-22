@@ -103,7 +103,7 @@ class _TasksState extends State<Tasks> {
 
                 return Container(
                   height: 100,
-                  margin: const EdgeInsets.only(bottom: 15.0),
+                  margin: EdgeInsets.fromLTRB(0, 5.0, 0, 15.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
                     color: Theme.of(context).scaffoldBackgroundColor,
@@ -118,11 +118,11 @@ class _TasksState extends State<Tasks> {
                   child: ListTile(
                     title: Text(
                       data['taskName'],
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(fontSize: 18.sp),
                     ),
                     subtitle: Text(
                       data['taskDesc'],
-                      style: TextStyle(fontSize: 15),
+                      style: TextStyle(fontSize: 15.sp),
                     ),
                     isThreeLine: true,
                     trailing: PopupMenuButton(

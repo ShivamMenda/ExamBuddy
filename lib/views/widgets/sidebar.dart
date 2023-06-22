@@ -3,8 +3,6 @@ import 'package:exam_buddy/services/auth_service.dart';
 import 'package:exam_buddy/views/screens/auth/login_screen.dart';
 import 'package:exam_buddy/views/screens/group_chat/group_chat_screen.dart';
 import 'package:exam_buddy/views/screens/home_screen.dart';
-
-import 'package:exam_buddy/views/screens/profile_screen.dart';
 import 'package:exam_buddy/views/screens/resource_screen.dart';
 import 'package:exam_buddy/views/screens/todo_screen.dart';
 import 'package:exam_buddy/views/screens/video_call_screen.dart';
@@ -106,14 +104,6 @@ class _SideBarState extends State<SideBar> {
             ),
             title: Text('Call'),
             onTap: () => Get.to(() => VideoCallScreen()),
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.person,
-              color: Colors.white,
-            ),
-            title: Text('Profile'),
-            onTap: () => Get.to(() => ProfileScreen()),
           ),
           Divider(),
           ListTile(

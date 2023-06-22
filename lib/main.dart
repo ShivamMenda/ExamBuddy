@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors
-
-import 'package:exam_buddy/views/screens/home_screen.dart';
-import 'package:exam_buddy/views/screens/onboarding_screen.dart';
+import 'package:exam_buddy/views/screens/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
@@ -33,7 +31,7 @@ class MyApp extends StatelessWidget {
             buttonColor: Color(0xFF2A90FF),
           ),
         ),
-        home: OnBoardingPage(),
+        home: LoginPage(),
       ),
     );
   }
