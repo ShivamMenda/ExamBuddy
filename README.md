@@ -1,6 +1,6 @@
 # Exam Buddy
 
-Our Mini project has been created in flutter using Firebase and VideoSDK. It supports only mobile for now, clone the appropriate branches mentioned below:
+This project has been created in flutter using Firebase and VideoSDK. It supports only mobile for now, clone the appropriate branches mentioned below:
 
 https://github.com/ShivamMenda/ExamBuddy/tree/master
 
