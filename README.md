@@ -1,16 +1,48 @@
-# exam_buddy
+# Exam Buddy
 
-A new Flutter project.
+Our Mini project has been created in flutter using Firebase and VideoSDK. It supports only mobile for now, clone the appropriate branches mentioned below:
 
-## Getting Started
+https://github.com/ShivamMenda/ExamBuddy/tree/master
 
-This project is a starting point for a Flutter application.
+## How to Use 
 
-A few resources to get you started if this is your first Flutter project:
+**Step 1:**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Download or clone this repo by using the link below:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+https://github.com/ShivamMenda/ExamBuddy
+```
+
+**Step 2:**
+
+Go to project root and execute the following command in console to get the required dependencies: 
+
+```
+flutter pub get 
+```
+
+**Step 3:**
+
+Run the project:
+
+```
+flutter run
+```
+# Contribute to the Project-:
+- [CODE OF CONDUCT](./CODE_OF_CONDUCT.md)
+- [CONTRIBUTION GUIDELINES](./CONTRIBUTING.MD)
+
+### Project Maintainers👨‍🏫:
+| ![](https://avatars.githubusercontent.com/u/74780977?v=4) |  
+| :-------------------------------------------------------: 
+| [Shivam Menda](https://github.com/ShivamMenda)    
+
+<h2 align="center" id="DevelopedBy"> :label: Developed By</h2>
+
+   - [Shivam Menda](https://github.com/ShivamMenda) 
+   - [Prashasti Mattas](https://github.com/pr1397)
+   - [Shania Vijay](https://github.com/ShaniaVijay)
+   - [Sharadhi NN](https://github.com/SharadhiNN)
+
+
