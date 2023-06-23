@@ -2,8 +2,6 @@ name: Build and Release APK
 
 on:
   push:
-    tags:
-      - "v*"
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
@@ -28,4 +26,4 @@ jobs:
       with:
         artifacts: "build/app/outputs/apk/debug/*.apk"
         token: ${{ secrets.TOKEN }}
-        tag: "v*"
+        tag: "latest"
