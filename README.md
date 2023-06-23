@@ -31,7 +31,7 @@ flutter run
 ```
 # Contribute to the Project-:
 - [CODE OF CONDUCT](./CODE_OF_CONDUCT.md)
-- [CONTRIBUTION GUIDELINES](./CONTRIBUTING.MD)
+- [CONTRIBUTION GUIDELINES](./CONTRIBUTING.md)
 
 ### Project Maintainers👨‍🏫:
 | ![](https://avatars.githubusercontent.com/u/74780977?v=4) |  
