@@ -3,8 +3,6 @@ name: Build and Release APK
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
   build:
@@ -20,10 +18,11 @@ jobs:
         flutter-version: '3.10.2'
         cache: true
     - run: flutter pub get
-    - run: flutter build apk
+    - run: flutter build apk --debug --split-per-abi
     - name: Push APK to Releases
       uses: ncipollo/release-action@v1
       with:
         artifacts: "build/app/outputs/apk/debug/*.apk"
+        cache: true
         token: ${{ secrets.TOKEN }}
         tag: "latest"
