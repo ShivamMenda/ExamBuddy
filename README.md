@@ -1,8 +1,6 @@
 # Exam Buddy
 
-This project has been created in flutter using Firebase and VideoSDK. It supports only mobile for now, clone the appropriate branches mentioned below:
-
-https://github.com/ShivamMenda/ExamBuddy/tree/master
+This project has been created in flutter using Firebase and VideoSDK. 
 
 ## How to Use 
 
@@ -11,7 +9,8 @@ https://github.com/ShivamMenda/ExamBuddy/tree/master
 Download or clone this repo by using the link below:
 
 ```
-https://github.com/ShivamMenda/ExamBuddy
+https://github.com/SharadhiNN/ExamBuddy
+
 ```
 
 **Step 2:**
@@ -33,10 +32,6 @@ flutter run
 - [CODE OF CONDUCT](./CODE_OF_CONDUCT.md)
 - [CONTRIBUTION GUIDELINES](./CONTRIBUTING.md)
 
-### Project Maintainers👨‍🏫:
-| ![](https://avatars.githubusercontent.com/u/74780977?v=4) |  
-| :-------------------------------------------------------: 
-| [Shivam Menda](https://github.com/ShivamMenda)    
 
 <h2 align="center" id="DevelopedBy"> :label: Developed By</h2>
 
