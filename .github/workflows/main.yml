@@ -25,4 +25,4 @@ jobs:
         artifacts: "build/app/outputs/apk/debug/*.apk"
         cache: true
         token: ${{ secrets.TOKEN }}
-        tag: "latest"
+        tag: v1.0.${{ github.run_number }}
