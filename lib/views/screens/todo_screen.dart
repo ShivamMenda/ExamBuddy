@@ -6,6 +6,7 @@ import 'package:exam_buddy/views/widgets/delete_task_dialog.dart';
 import 'package:exam_buddy/views/widgets/sidebar.dart';
 import 'package:exam_buddy/views/widgets/update_task_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:sizer/sizer.dart';
 
 class ToDoScreen extends StatefulWidget {
@@ -106,7 +107,7 @@ class _TasksState extends State<Tasks> {
                   margin: EdgeInsets.fromLTRB(0, 5.0, 0, 15.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),
-                    color: Theme.of(context).scaffoldBackgroundColor,
+                    color: Colors.white,
                     boxShadow: const [
                       BoxShadow(
                         color: Colors.grey,
@@ -118,11 +119,11 @@ class _TasksState extends State<Tasks> {
                   child: ListTile(
                     title: Text(
                       data['taskName'],
-                      style: TextStyle(fontSize: 18.sp),
+                      style: TextStyle(fontSize: 18.sp, color: Colors.black),
                     ),
                     subtitle: Text(
                       data['taskDesc'],
-                      style: TextStyle(fontSize: 15.sp),
+                      style: TextStyle(fontSize: 15.sp, color: Colors.black54),
                     ),
                     isThreeLine: true,
                     trailing: PopupMenuButton(

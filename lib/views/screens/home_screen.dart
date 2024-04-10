@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     .collection('tasks')
                     .snapshots(),
                 builder: (context, snapshot) {
-                  if (!snapshot.hasData) {
+                  if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 24.0, vertical: 5.0),
@@ -95,16 +95,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             fontWeight: FontWeight.w500, fontSize: 17.sp),
                       ),
                     );
+                  } else {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 24.0, vertical: 5.0),
+                      child: Text(
+                        "You have ${snapshot.data?.docs.length} Task(s) remaining for the day",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500, fontSize: 17.sp),
+                      ),
+                    );
                   }
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24.0, vertical: 5.0),
-                    child: Text(
-                      "You have ${snapshot.data?.docs.length} Task(s) remaining for the day",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 17.sp),
-                    ),
-                  );
                 }),
             SizedBox(
               height: 3.5.h,

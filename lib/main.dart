@@ -1,5 +1,8 @@
 // ignore_for_file: prefer_const_constructors
+import 'package:exam_buddy/helper/helper_function.dart';
 import 'package:exam_buddy/views/screens/auth/login_screen.dart';
+import 'package:exam_buddy/views/screens/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
@@ -26,12 +29,21 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.interTextTheme()
               .apply(bodyColor: Colors.white, displayColor: Colors.white),
           scaffoldBackgroundColor: Color(0xFF1A1A1A),
-          appBarTheme: AppBarTheme(color: Colors.transparent, elevation: 0),
+          appBarTheme: AppBarTheme(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              titleTextStyle: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600),
+              centerTitle: true),
           buttonTheme: ButtonThemeData(
             buttonColor: Color(0xFF2A90FF),
           ),
+          useMaterial3: false,
         ),
         home: LoginPage(),
+        
       ),
     );
   }
