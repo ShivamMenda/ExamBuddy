@@ -74,13 +74,13 @@ class _UpdateTaskAlertDialogState extends State<UpdateTaskAlertDialog> {
             Navigator.of(context, rootNavigator: true).pop();
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.red,
+            backgroundColor: Colors.red,
           ),
           child: const Text('Cancel'),
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            primary: Colors.green,
+            backgroundColor: Colors.green,
           ),
           onPressed: () {
             final taskName = taskNameController.text;

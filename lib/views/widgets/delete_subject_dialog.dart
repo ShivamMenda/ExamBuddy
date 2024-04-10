@@ -59,7 +59,7 @@ class _DeleteSubjectDialogState extends State<DeleteSubjectDialog> {
             Get.to(() => HomeScreen());
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.blue,
+            backgroundColor: Colors.blue,
           ),
           child: const Text('Cancel'),
         ),
@@ -69,7 +69,7 @@ class _DeleteSubjectDialogState extends State<DeleteSubjectDialog> {
             Navigator.of(context, rootNavigator: true).pop();
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.red,
+            backgroundColor: Colors.red,
           ),
           child: const Text('Delete'),
         ),

@@ -85,13 +85,13 @@ class _AddSubjectAlertDialogState extends State<AddSubjectAlertDialog> {
             Navigator.of(context, rootNavigator: true).pop();
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.red,
+            backgroundColor: Colors.red,
           ),
           child: const Text('Cancel'),
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            primary: Colors.green,
+            backgroundColor: Colors.green,
           ),
           onPressed: () async {
             final SubjectName = SubjectNameController.text;

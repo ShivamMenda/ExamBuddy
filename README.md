@@ -9,7 +9,7 @@ This project has been created in flutter using Firebase and VideoSDK.
 Download or clone this repo by using the link below:
 
 ```
-https://github.com/SharadhiNN/ExamBuddy
+https://github.com/ShivamMenda/ExamBuddy
 
 ```
 
@@ -35,9 +35,6 @@ flutter run
 
 <h2 align="center" id="DevelopedBy"> :label: Developed By</h2>
 
-   - [Shivam Menda](https://github.com/ShivamMenda) 
-   - [Prashasti Mattas](https://github.com/pr1397)
-   - [Shania Vijay](https://github.com/ShaniaVijay)
-   - [Sharadhi NN](https://github.com/SharadhiNN)
+   - [Shivam Menda](https://github.com/ShivamMenda)
 
 

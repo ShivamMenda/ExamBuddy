@@ -146,7 +146,7 @@ class _GroupChatHomePageState extends State<GroupChatHomePage> {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  style: ElevatedButton.styleFrom(primary: Colors.red),
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                   child: const Text("CANCEL"),
                 ),
                 ElevatedButton(
@@ -167,7 +167,7 @@ class _GroupChatHomePageState extends State<GroupChatHomePage> {
                           backgroundColor: Colors.green);
                     }
                   },
-                  style: ElevatedButton.styleFrom(primary: Colors.green),
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
                   child: const Text("CREATE"),
                 )
               ],
